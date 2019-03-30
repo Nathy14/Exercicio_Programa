@@ -45,96 +45,122 @@ void calcular(double str[])
     }
 }
 
-double * percorrer(char str[], double limite)
+double * conta_ocorrencias(char str[], double limite)
 {
   static double aparicao[26];
 
   for (int i = 0;i <= 26; i++) {
-    aparicao[i] = 0;
+      aparicao[i] = 0;
   }
 
   for (int i = 0;i <= limite; i++) {
-    switch(str[i]){
-    case 'a':
-      aparicao[0] = aparicao[0]++;
+      switch (str[i]) {
+      case 'a':
+      case 'A':
+          aparicao[0] = aparicao[0]++;
+          break;
+      case 'b':
+      case 'B':
+          aparicao[1] = aparicao[1]++;
+          break;
+      case 'c':
+      case 'C':
+          aparicao[2] = aparicao[2]++;
+          break;
+      case 'd':
+      case 'D':
+          aparicao[3] = aparicao[3]++;
+          break;
+      case 'e':
+      case 'E':
+          aparicao[4] = aparicao[4]++;
+          break;
+      case 'f':
+      case 'F':
+          aparicao[5] = aparicao[5]++;
+          break;
+      case 'g':
+      case 'G':
+          aparicao[6] = aparicao[6]++;
+          break;
+      case 'h':
+      case 'H':
+          aparicao[7] = aparicao[7]++;
+          break;
+      case 'i':
+      case 'I':
+          aparicao[8] = aparicao[8]++;
+          break;
+      case 'j':
+      case 'J':
+          aparicao[9] = aparicao[9]++;
+          break;
+      case 'k':
+      case 'K':
+          aparicao[10] = aparicao[10]++;
+          break;
+      case 'l':
+      case 'L':
+          aparicao[11] = aparicao[11]++;
+          break;
+      case 'm':
+      case 'M':
+          aparicao[12] = aparicao[12]++;
+          break;
+      case 'n':
+      case 'N':
+          aparicao[13] = aparicao[13]++;
+          break;
+      case 'o':
+      case 'O':
+          aparicao[14] = aparicao[14]++;
+          break;
+      case 'p':
+      case 'P':
+          aparicao[15] = aparicao[15]++;
+          break;
+      case 'q':
+      case 'Q':
+          aparicao[16] = aparicao[16]++;
+          break;
+      case 'r':
+      case 'R':
+          aparicao[17] = aparicao[17]++;
+          break;
+      case 's':
+      case 'S':
+          aparicao[18] = aparicao[18]++;
+          break;
+      case 't':
+      case 'T':
+          aparicao[19] = aparicao[19]++;
+          break;
+      case 'u':
+      case 'U':
+          aparicao[20] = aparicao[20]++;
+          break;
+      case 'v':
+      case 'V':
+          aparicao[21] = aparicao[21]++;
+          break;
+      case 'w':
+      case 'W':
+          aparicao[22] = aparicao[22]++;
+          break;
+      case 'x':
+      case 'X':
+          aparicao[23] = aparicao[23]++;
+          break;
+      case 'y':
+      case 'Y':
+          aparicao[24] = aparicao[24]++;
+          break;
+      case 'z':
+      case 'Z':
+          aparicao[25] = aparicao[25]++;
+          break;
       break;
-    case 'b':
-      aparicao[1] = aparicao[1]++;
-      break;
-    case 'c':
-      aparicao[2] = aparicao[2]++;
-      break;
-    case 'd':
-      aparicao[3] = aparicao[3]++;
-      break;
-    case 'e':
-      aparicao[4] = aparicao[4]++;
-      break;
-    case 'f':
-      aparicao[5] = aparicao[5]++;
-      break;
-    case 'g':
-      aparicao[6] = aparicao[6]++;
-      break;
-    case 'h':
-      aparicao[7] = aparicao[7]++;
-      break;
-    case 'i':
-      aparicao[8] = aparicao[8]++;
-      break;
-    case 'j':
-      aparicao[9] = aparicao[9]++;
-      break;
-    case 'k':
-      aparicao[10] = aparicao[10]++;
-      break;
-    case 'l':
-      aparicao[11] = aparicao[11]++;
-      break;
-    case 'm':
-      aparicao[12] = aparicao[12]++;
-      break;
-    case 'n':
-      aparicao[13] = aparicao[13]++;
-      break;
-    case 'o':
-      aparicao[14] = aparicao[14]++;
-      break;
-    case 'p':
-      aparicao[15] = aparicao[15]++;
-      break;
-    case 'q':
-      aparicao[16] = aparicao[16]++;
-      break;
-    case 'r':
-      aparicao[17] = aparicao[17]++;
-      break;
-    case 's':
-      aparicao[18] = aparicao[18]++;
-      break;
-    case 't':
-      aparicao[19] = aparicao[19]++;
-      break;
-    case 'u':
-      aparicao[20] = aparicao[20]++;
-      break;
-    case 'v':
-      aparicao[21] = aparicao[21]++;
-      break;
-    case 'w':
-      aparicao[22] = aparicao[22]++;
-      break;
-    case 'x':
-      aparicao[23] = aparicao[23]++;
-      break;
-    case 'y':
-      aparicao[24] = aparicao[24]++;
-      break;
-    case 'z':
-      aparicao[25] = aparicao[25]++;
-      break;
-    break;
-    }
+      }
   }
 
   return aparicao;
@@ -149,7 +175,7 @@ int main(void)
     printf("Digite a frase a qual deseja descobrir a qual lingua pertence!\n(PT-ENG-GER ONLY)\n\n >> ");
     scanf("%[^\n]%*c", str);
     tamanho = strlen(str);
-    ip = percorrer(str,tamanho);
+    ip = conta_ocorrencias(str,tamanho);
     calcular(ip);
     printf("%s\n", str);
     return 0;
